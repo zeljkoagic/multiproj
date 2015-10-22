@@ -1,3 +1,0 @@
-# not valid: DEPREL must be "root" iff HEAD is 0.
-1	word	word	NOUN	_	_	0	nsubj	_	_
-
