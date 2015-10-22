@@ -1,4 +1,6 @@
 .DS_Store
 .idea
-target
-!target/*jar
+tools/ChuLiuEdmonds/target/*
+tools/ChuLiuEdmonds/target/**/*
+!tools/ChuLiuEdmonds/target/*jar
+
