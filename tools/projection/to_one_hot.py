@@ -5,11 +5,11 @@ import sys
 
 import utils.conll as conll
 
-reload(sys)
-sys.setdefaultencoding('utf8')
+#reload(sys)
+#sys.setdefaultencoding('utf8')
 
-sys.stdin = codecs.getreader('utf8')(sys.stdin)
-sys.stdout = codecs.getwriter('utf-8')(sys.stdout)
+#sys.stdin = codecs.getreader('utf8')(sys.stdin)
+#sys.stdout = codecs.getwriter('utf-8')(sys.stdout)
 
 file_handle = codecs.open(sys.argv[1], encoding="utf8")
 
@@ -28,5 +28,5 @@ while sentence:
     #    continue
 
     for i in range(len(sentence)):
-        print sentence[i], " ".join(map(str, one_hot[i+1]))
-    print
+        print(sentence[i], " ".join(map(str, one_hot[i+1])))
+    print()

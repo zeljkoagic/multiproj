@@ -36,4 +36,4 @@ e = Edge(2, 3, "none", 0.01)
 g = Graph()
 g.add_edge(e)
 
-print g.matrix
+print(g.matrix)

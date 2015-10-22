@@ -66,7 +66,7 @@ def print_conll(sentences):
     """Prints CoNLL sentences to stdout."""
     for sentence in sentences:
         for token in sentence:
-            print token
+            print(token)
         print
 
 

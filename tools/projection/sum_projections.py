@@ -5,11 +5,11 @@ from collections import defaultdict, Counter
 import numpy as np
 import utils.conll as conll
 
-reload(sys)
-sys.setdefaultencoding('utf8')
+#reload(sys)
+#sys.setdefaultencoding('utf8')
 
-sys.stdin = codecs.getreader('utf8')(sys.stdin)
-sys.stdout = codecs.getwriter('utf-8')(sys.stdout)
+#sys.stdin = codecs.getreader('utf8')(sys.stdin)
+#sys.stdout = codecs.getwriter('utf-8')(sys.stdout)
 
 projection_files = sys.argv[:-1]  # list of files containing the projections
 projection_type = sys.argv[-1]  # unit votes on tree edges vs. matrix voting for subsequent MST-ing
@@ -39,14 +39,14 @@ while handles[0].read(1):
                 heads = line[10:]
                 it = 0
                 for h in heads:
-                    print it
+                    print(it)
                     votes_for_current_line[it] += float(h)
                     it += 1
 
-            print conll.ConllToken.from_list(current_lines[0][:8]),
+            print(conll.ConllToken.from_list(current_lines[0][:8]), end="\t")
             for item in votes_for_current_line:
-                print item,
-            print
+                print(item, end=" ")
+            print()
 
         elif projection_type == "unit":
 
@@ -64,10 +64,10 @@ while handles[0].read(1):
         if projection_type == "unit":
             for token in current_sentence:
                 token.head = votes_for_current_sentence_tokens[token.idx].most_common(0)[0]
-                print token
+                print(token)
 
             current_token_id = 0
             votes_for_current_sentence_tokens = []
             current_sentence = []
 
-        print
+        print()

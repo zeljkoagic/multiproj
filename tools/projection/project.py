@@ -2,16 +2,16 @@ from __future__ import division
 
 import argparse
 import codecs
-import sys
+#import sys
 
 import utils.alignments as align
 import utils.conll as conll
 
-reload(sys)
-sys.setdefaultencoding('utf8')
+#reload(sys)
+#sys.setdefaultencoding('utf8')
 
-sys.stdin = codecs.getreader('utf8')(sys.stdin)
-sys.stdout = codecs.getwriter('utf-8')(sys.stdout)
+#sys.stdin = codecs.getreader('utf8')(sys.stdin)
+#sys.stdout = codecs.getwriter('utf-8')(sys.stdout)
 
 parser = argparse.ArgumentParser(description="Projects dependency trees from source to target via word alignments.")
 
@@ -63,8 +63,8 @@ for aln_line in codecs.open(args.aligns, encoding="utf8"):
         T *= similarity
 
         for token in target_sentence:
-            print token,
+            print(token, end="\t")
             for item in T[token.idx]:
-                print item,
-            print
-        print
+                print(item, end=" ")
+            print()
+        print()
