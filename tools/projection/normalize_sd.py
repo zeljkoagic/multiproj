@@ -31,7 +31,7 @@ def quantilize(X):
     D={}
     SD=np.std(X)
     M=np.mean(X)
-    Z=[clip(0.5 + float(x) - M / (2*SD)) for x in X]
+    Z=[clip(0.5 + float(x) - M / (2*SD)+0.0000001) for x in X]
     D_prime=dict(zip(X,Z))
     y=chunkIt(Z,3)
     for x in X:
@@ -43,7 +43,7 @@ def normalize(X):
     SD=np.std(X)
     M=np.mean(X)
     D=dict(zip(
-        X,[str(clip(0.5 + float(x) - M / (2*SD))) for x in X]
+        X,[str(clip(0.5 + float(x) - M / (2*SD)+0.0000001)) for x in X]
     ))
     return dict(D)
 
