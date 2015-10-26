@@ -18,12 +18,13 @@ parser = argparse.ArgumentParser(description="Projects dependency trees from sou
 parser.add_argument("--source", metavar="SRC", required=True, help="source conll file")
 parser.add_argument("--target", metavar="TRG", required=True, help="target conll file")
 parser.add_argument("--aligns", metavar="ALN", required=True, help="word aligments file")
-parser.add_argument("--weight", metavar="WGT", required=True, help="language pair similarity file")
+parser.add_argument("--weight", metavar="WGT", required=False, help="language pair similarity file")
 
 args = parser.parse_args()
 
 # get similarity
-similarity = float(codecs.open(args.weight, encoding="utf8").readline().strip())
+# similarity = float(codecs.open(args.weight, encoding="utf8").readline().strip())
+similarity = 1
 
 # get the source and target conll file handlers
 source_file_handle = codecs.open(args.source, encoding="utf8")
