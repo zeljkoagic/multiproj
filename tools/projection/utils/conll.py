@@ -29,6 +29,8 @@ class ConllToken:
     def from_list(cls, items):
         """Initializes CoNLL token from list."""
         if len(items) == 8:
+            if not int(items[6]):
+                items[6] = -1
             return ConllToken(items[0], items[1], items[2], items[3], items[4], items[5], items[6], items[7])
         else:
             raise Exception("Token init requires %s items, %s provided." % (8, len(items)))
