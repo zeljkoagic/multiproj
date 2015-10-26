@@ -73,11 +73,11 @@ for c in conll:
             weights=[]
             for i in range(len(sent)+1):
                 if i in numbers:
-                    #weights.append(str(i) + ":" + D[numbers[i]])
-                    weights.append(D[numbers[i]])
+                    weights.append(str(i) + ":" + D[numbers[i]])
+                    #weights.append(D[numbers[i]])
                 else:
-                    #weights.append(str(i) + ":0.0")
-                    weights.append("0.0")
+                    weights.append(str(i) + ":0.0")
+                    #weights.append("0.0")
             string+="\t".join(weights)
             print(string)
         sent = []
