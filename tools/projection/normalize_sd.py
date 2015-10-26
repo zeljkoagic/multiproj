@@ -57,14 +57,18 @@ for c in conll:
             numbers=[(int(x.split(":")[0]),float(x.split(":")[1])) for x in w[8:]]
             numbers=dict(numbers)
             numbers_list=[(float(x.split(":")[1])) for x in w[8:]]
-            D=normalize(numbers_list)
-            D=rank(numbers_list)
-            D=quantilize(numbers_list)
-            #            c=-1
-            #            for i in range(len(sent)+1):
-            #                if i in numbers:
-            #                    c+=1
-            #                    new_numbers[n]=D
+
+            if sys.argv[2] == "normalize":
+                D=normalize(numbers_list)
+            elif sys.argv[2] == "rank":
+                D=rank(numbers_list)
+            elif sys.argv[2] == "intrank":
+                D=intrank(numbers_list)
+            elif sys.argv[2] == "quantilize":
+                D=quantilize(numbers_list)
+            else:
+                raise Exception("sys.argv[2] must be one of: normalize, rank, intrank, quantilize")
+
             string="\t".join(w[:8])+'\t'
             weights=[]
             for i in range(len(sent)):
