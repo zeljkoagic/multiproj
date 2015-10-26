@@ -71,7 +71,7 @@ for c in conll:
 
             string="\t".join(w[:8])+'\t'
             weights=[]
-            for i in range(len(sent)):
+            for i in range(len(sent)+1):
                 if i in numbers:
                     #weights.append(str(i) + ":" + D[numbers[i]])
                     weights.append(D[numbers[i]])
