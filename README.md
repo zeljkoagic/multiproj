@@ -1,1 +1,1 @@
-An earlier implementation of zeljkoagic/nlpfromscrach, TACL 2016.
+An earlier implementation of [our TACL 2016 work](https://www.github.com/zeljkoagic/nlpfromscrach).
